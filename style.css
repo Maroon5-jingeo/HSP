@@ -1,0 +1,202 @@
+/* 기본 설정 및 컬러 변수 */
+:root {
+    --primary-color: #81D4FA;
+    --secondary-color: #F48FB1;
+    --bg-color: #F8F9FA;
+    --text-color: #333333;
+    --white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 헤더 영역 */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* 스토리 영역 */
+.story-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.story-desc {
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.roles-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.role-card {
+    background-color: var(--white);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 15px rgba(129, 212, 250, 0.3);
+}
+
+.role-message {
+    margin-top: 30px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    min-height: 24px;
+}
+
+/* 히로인 소개 영역 */
+.heroine-section {
+    background-color: var(--white);
+    padding: 60px 0;
+}
+
+.heroine-section h2, .section-subtitle {
+    text-align: center;
+}
+
+.section-subtitle {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* 5명을 예쁘게 배치하기 위한 그리드 */
+.heroines-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.heroine-card {
+    width: 280px;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.heroine-card:hover {
+    transform: scale(1.03);
+}
+
+/* 💥 클릭 연출을 위한 컨테이너 및 이미지 스타일 */
+.image-reveal-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* 3:4 비율 고정! */
+    cursor: pointer;
+    background-color: #EFEFEF; /* 로고 뒤 배경색 */
+    overflow: hidden;
+}
+
+/* 처음에 보이는 로고 (로고 모양이 잘리지 않게 object-fit: contain 사용 권장) */
+.heroine-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 로고가 카드에 꽉 차게 원하시면 cover, 여백을 원하시면 contain으로 변경하세요 */
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+/* 숨겨져 있는 진짜 일러스트 */
+.heroine-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* 처음에 투명하게 숨김 */
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+/* 클릭 후(revealed) 상태 변화 */
+.image-reveal-container.revealed .heroine-logo {
+    opacity: 0;
+    pointer-events: none; /* 더 이상 로고가 클릭되지 않도록 방지 */
+}
+
+.image-reveal-container.revealed .heroine-image {
+    opacity: 1;
+}
+
+/* 텍스트 영역 */
+.heroine-info {
+    padding: 20px;
+}
+
+.heroine-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+}
+
+.job-tag {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.8em;
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.heroine-info p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #FFF;
+    font-size: 0.9em;
+}

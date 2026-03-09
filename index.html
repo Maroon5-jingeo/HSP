@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬기로운 병원생활 | 나만의 병원 로맨스 시작하기</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-section">
+        <h1>슬기로운 병원생활</h1>
+        <p>본격 내 맘대로 시작하는 나만의 하렘 로맨스!</p>
+    </header>
+
+    <section class="story-section">
+        <div class="container">
+            <h2>당신은 현재 병원에 있습니다.</h2>
+            <p class="story-desc">
+                오늘도 병원에서는 무슨 일이 일어나고 있을까요?<br>
+                당신의 선택과 언행에 따라 스토리도 점점 달라집니다. 어떤 역할로 이 병원에 발을 들이시겠습니까?
+            </p>
+
+            <div class="roles-container">
+                <div class="role-card" onclick="selectRole('환자')">
+                    <h3>🩺 입원한 환자</h3>
+                    <p>모든 보살핌을 받는 위치에서 피어나는 아슬아슬한 병실 로맨스</p>
+                </div>
+                <div class="role-card" onclick="selectRole('의사')">
+                    <h3>🥼 명망있는 의사</h3>
+                    <p>실력과 매력으로 병원을 사로잡는 에이스의 등장</p>
+                </div>
+                <div class="role-card" onclick="selectRole('원무과')">
+                    <h3>💻 유능한 원무과 직원</h3>
+                    <p>병원의 살림꾼, 그녀들과의 은밀하고 짜릿한 사내 연애</p>
+                </div>
+            </div>
+            <p id="role-message" class="role-message"></p>
+        </div>
+    </section>
+
+    <section class="heroine-section">
+        <div class="container">
+            <h2>등장인물 소개</h2>
+            <p class="section-subtitle">아이콘을 클릭하여 당신의 일상을 뒤흔들 히로인을 확인하세요!</p>
+            
+            <div class="heroines-grid">
+                <div class="heroine-card">
+                    <div class="image-reveal-container" onclick="revealHeroine(this)">
+                        <img src="Y00.webp" alt="유하솔 로고" class="heroine-logo">
+                        <img src="Y01.webp" alt="유하솔" class="heroine-image">
+                    </div>
+                    <div class="heroine-info">
+                        <h3>유하솔</h3>
+                        <span class="job-tag" style="background-color: #9C27B0;">신경외과 전문의 (37세, 교수)</span>
+                        <p>차갑고 완벽주의자 같지만, 내면엔 따뜻함을 숨기고 있는 전문의.</p>
+                    </div>
+                </div>
+
+                <div class="heroine-card">
+                    <div class="image-reveal-container" onclick="revealHeroine(this)">
+                        <img src="H00.webp" alt="한서영 로고" class="heroine-logo">
+                        <img src="H01.webp" alt="한서영" class="heroine-image">
+                    </div>
+                    <div class="heroine-info">
+                        <h3>한서영</h3>
+                        <span class="job-tag" style="background-color: #FF9800;">3A병동 주임간호사 (28세, 간호사)</span>
+                        <p>언제나 밝은 미소로 환자들과 동료들에게 비타민이 되어주는 미소천사.</p>
+                    </div>
+                </div>
+
+                <div class="heroine-card">
+                    <div class="image-reveal-container" onclick="revealHeroine(this)">
+                        <img src="K00.webp" alt="곽상지 로고" class="heroine-logo">
+                        <img src="K01.webp" alt="곽상지" class="heroine-image">
+                    </div>
+                    <div class="heroine-info">
+                        <h3>곽상지</h3>
+                        <span class="job-tag">원무과 직원 (26세, 주임)</span>
+                        <p>똑부러지는 일 처리와 세련된 외모. 하지만 가끔 보여주는 허당끼가 매력 포인트!</p>
+                    </div>
+                </div>
+
+                <div class="heroine-card">
+                    <div class="image-reveal-container" onclick="revealHeroine(this)">
+                        <img src="L00.webp" alt="이채연 로고" class="heroine-logo">
+                        <img src="L01.webp" alt="이채연" class="heroine-image">
+                    </div>
+                    <div class="heroine-info">
+                        <h3>이채연</h3>
+                        <span class="job-tag" style="background-color: #448AFF;">원내 카페 알바생 (21세, 대학생)</span>
+                        <p>카페의 귀여운 마스코트. 톡톡 튀면서도 세심한 성격으로 병원을 찾는 모든 이들에게 활력을 불어넣는다.</p>
+                    </div>
+                </div>
+
+                <div class="heroine-card">
+                    <div class="image-reveal-container" onclick="revealHeroine(this)">
+                        <img src="P00.webp" alt="방소율 로고" class="heroine-logo">
+                        <img src="P01.webp" alt="방소율" class="heroine-image">
+                    </div>
+                    <div class="heroine-info">
+                        <h3>방소율</h3>
+                        <span class="job-tag" style="background-color: #eadc59;">3A병동 입원 환자 (21세, 대학생)</span>
+                        <p>대학교 치어리더 활동 중 팔목 타박상으로 입원한 대학생. 특유의 발랄함과 긍정 에너지로 병실에 활기를 불어넣는다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI 크랙 스토리 - 슬기로운 병원생활. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
