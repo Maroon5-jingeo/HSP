@@ -24,22 +24,30 @@ body {
 
 /* 헤더 영역 */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('B60.webp');
+    background-size: cover;
+    background-position: center;
     color: var(--white);
     text-align: center;
-    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .hero-section h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .hero-section p {
     font-size: 1.2em;
     font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 /* 스토리 영역 */
